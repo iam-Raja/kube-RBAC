@@ -46,7 +46,7 @@ kind: ClusterRoleBinding
 metadata:
   name: cluster-reader
 subjects:
-- kind: Group
+- kind: user
   name: Rohit # Name is case sensitive
   apiGroup: rbac.authorization.k8s.io
 roleRef:
