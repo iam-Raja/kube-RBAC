@@ -7,12 +7,8 @@ data:
       rolearn: arn:aws:iam::533267192490:role/eksctl-basic-cluster-nodegroup-bas-NodeInstanceRole-orhba8viySe0
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
-    - groups:
-      - system:masters
-      userarn: arn:aws:iam::111122223333:user/admin
-      username: admin
-    - groups:
-      - eks-console-dashboard-restricted-access-group      
+    - groups:    
+      - pod-reader 
       userarn: arn:aws:iam::533267192490:user/Rohit
       username: Rohit
 
@@ -20,5 +16,5 @@ kind: ConfigMap
 metadata:
   creationTimestamp: "2024-07-05T12:06:34Z"
   name: aws-auth
-  namespace: expense
+  namespace: kube-system
   uid: b68e919a-71a0-4853-a7d6-349a2c84a0ec
